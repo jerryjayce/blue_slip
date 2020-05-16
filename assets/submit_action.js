@@ -14,7 +14,12 @@ $('#reg_form').submit(function (event) {
         enctype: 'multipart/form-data',
         success: function (data, status, xhr) {// success callback function
             if (data == true){
-                $(".registration_successful").show(300);
+                $(".registration_successful").show(1000, function () {
+                    // window.location;
+                    setTimeout(function () {
+                        location.reload(true);
+                    }, 2000);
+                });
             }else {
                 $(".registration_failed").show(300);
             }
